@@ -7,7 +7,7 @@ import Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main =
-  hakyll $ do
+  hakyllWith config $ do
     match "images/*" $ do
       route idRoute
       compile copyFileCompiler
@@ -54,3 +54,9 @@ main =
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx = dateField "date" "%B %e, %Y" `mappend` defaultContext
+
+config :: Configuration
+config =
+  defaultConfiguration
+    { destinationDirectory = "docs" -- for github pages
+    }
