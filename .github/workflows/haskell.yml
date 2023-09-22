@@ -12,6 +12,8 @@ on:
 permissions:
   contents: write
 
+runs-on: self-hosted
+
 jobs:
   build:
 
