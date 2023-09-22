@@ -1,34 +1,19 @@
 ---
-title: Home
+title: Schedule
 ---
 
-<h2>
-    Welcome
-</h2>
-
+<p>
+</p>
 <!--
 <img src="/images/haskell-logo.png" style="float: right; margin: 10px;" />
 -->
 
-<p>
-    Welcome to my blog!
-</p>
+<hr>
 
-<iframe src="/schedule/2023-fall.html" width="100%" height="500">
-    <p>
-        iframe failed to load
-    </p>
-</iframe>
-
-<!--
-<p>
-    I've reproduced a list of recent posts here for your reading pleasure:
-</p>
-
-<h2>
-    Posts
-</h2>
-$partial("templates/post-list.html")$
-
-<p>…or you can find more in the <a href="/archive.html">archives</a>.</p>
--->
+<div>
+    $for(schedules)$
+        <p>
+            $schedule_body$
+        </p>
+    $endfor$
+</div>

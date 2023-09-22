@@ -15,10 +15,10 @@ main =
     match "css/*" $ do
       route idRoute
       compile compressCssCompiler
-    match (fromList ["about.rst", "contact.markdown"]) $ do
+    match (fromList ["about.md", "contact.md"]) $ do
       route $ setExtension "html"
       compile
-        $ pandocCompiler
+        $ pandocMdCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
     match "posts/*" $ do
@@ -43,17 +43,20 @@ main =
     match "index.html" $ do
       route idRoute
       compile $ do
-        posts <- recentFirst =<< loadAll "posts/*"
         let indexCtx =
-              listField "posts" postCtx (return posts) `mappend` defaultContext
+              (listField
+                 "schedules"
+                 (bodyField "schedule_body" `mappend` defaultContext)
+                 (loadAll "schedules/*" >>= return . reverse))
+                `mappend` defaultContext
         getResourceBody
           >>= applyAsTemplate indexCtx
           >>= loadAndApplyTemplate "templates/default.html" indexCtx
-          >>= relativizeUrls
-    match "schedule/*" $ do
+          -- >>= relativizeUrls
+    match "schedules/*" $ do
       route $ setExtension "html"
       compile
-        $ pandocCompilerWith (def {readerExtensions = pandocExtensions}) def
+        $ pandocMdCompiler
             >>= loadAndApplyTemplate
                   "templates/schedule-iframe.html"
                   defaultContext
@@ -61,8 +64,12 @@ main =
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
+-- leftover form `hakyll-init`
 postCtx :: Context String
 postCtx = dateField "date" "%B %e, %Y" `mappend` defaultContext
+
+pandocMdCompiler =
+  pandocCompilerWith (def {readerExtensions = pandocExtensions}) def
 
 config :: Configuration
 config =
