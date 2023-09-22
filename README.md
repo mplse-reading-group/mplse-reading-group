@@ -1,6 +1,8 @@
 ## Modifying the Schedule
 The schedule for each semester is stored in a markdown file in **schedules/**.
-Edit the pipe table, and rebuild and push the changes.
+Edit the pipe table, and commit those changes.
+
+The github action should automatically.
 ## Building the Site
     cabal run -- site rebuild
 ## Previewing Changes
