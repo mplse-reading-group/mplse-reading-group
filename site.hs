@@ -3,6 +3,7 @@
 
 import Data.Monoid (mappend)
 import Hakyll
+import Text.Pandoc.Options
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -49,6 +50,14 @@ main =
           >>= applyAsTemplate indexCtx
           >>= loadAndApplyTemplate "templates/default.html" indexCtx
           >>= relativizeUrls
+    match "schedule/*" $ do
+      route $ setExtension "html"
+      compile
+        $ pandocCompilerWith (def {readerExtensions = pandocExtensions}) def
+            >>= loadAndApplyTemplate
+                  "templates/schedule-iframe.html"
+                  defaultContext
+            >>= relativizeUrls
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
