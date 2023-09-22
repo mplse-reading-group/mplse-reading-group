@@ -10,7 +10,7 @@ on:
     branches: [ "trunk" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
