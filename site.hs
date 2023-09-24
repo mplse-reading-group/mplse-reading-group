@@ -15,7 +15,7 @@ main =
     match "css/*" $ do
       route idRoute
       compile compressCssCompiler
-    match (fromList ["about.md", "contact.md"]) $ do
+    match (fromList ["about.md"]) $ do
       route $ setExtension "html"
       compile
         $ pandocMdCompiler
