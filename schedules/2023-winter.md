@@ -2,3 +2,4 @@
 |-----|-----|
 | try | blah |
 | test | github action |
+| another | fake table entry |
