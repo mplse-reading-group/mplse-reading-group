@@ -16,5 +16,6 @@ See the README at
 to sign up for a week.
 
 Or contact the organizer(s):
+
 - gaitonde α umich δ edu
 - hejohns α umich δ edu
