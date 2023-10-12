@@ -57,9 +57,7 @@ main =
       route $ setExtension "html"
       compile
         $ pandocMdCompiler
-            >>= loadAndApplyTemplate
-                  "templates/schedule-iframe.html"
-                  defaultContext
+            >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
             >>= relativizeUrls
     match "templates/*" $ compile templateBodyCompiler
 
