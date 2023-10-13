@@ -1,4 +1,11 @@
-/* https://github.com/alexerlandsson */
+/* https://github.com/alexerlandsson
+ *
+ * With some tweaks
+ */
+table, th, td{
+        border: 1px solid black;
+}
+
 table {
 	width: 800px;
 	border-collapse: collapse;
@@ -10,8 +17,8 @@ table {
 th,
 td {
 	padding: 15px;
-	background-color: rgba(255,255,255,0.2);
-	color: #fff;
+	background-color: rgba(255,255,255,0.7);
+	color: #000;
 }
 
 th {
@@ -27,7 +34,7 @@ thead {
 tbody {
 	tr {
 		&:hover {
-			background-color: rgba(255,255,255,0.3);
+			background-color: rgba(255,255,255,0.4);
 		}
 	}
 	td {
@@ -40,7 +47,7 @@ tbody {
 				right: 0;
 				top: -9999px;
 				bottom: -9999px;
-				background-color: rgba(255,255,255,0.2);
+				background-color: rgba(255,255,255,0.3);
 				z-index: -1;
 			}
 		}
