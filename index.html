@@ -155,7 +155,7 @@ footnotes have been appended.
 Steven Shaefer
 </td>
 <td>
-11/03 4-5pm@3941(?TODO) BBB
+11/03 4-5pm@3941 BBB
 </td>
 <td>
 <a href="https://plv.mpi-sws.org/rustbelt/popl18/paper.pdf">RustBelt:
@@ -182,6 +182,42 @@ say what verification condition it must satisfy in order for it to be
 deemed a safe extension to the language. We have carried out this
 verification for some of the most important libraries that are used
 throughout the Rust ecosystem.
+</td>
+</tr>
+<tr class="odd">
+<td>
+Andrew Blinn
+</td>
+<td>
+11/10 4-5pm@3941 BBB
+</td>
+<td>
+<a href="https://users.cs.utah.edu/plt/publications/oopsla23-faadffggkkmppst.pdf">Rhombus:
+A New Spin on Macros without All the Parentheses</a>
+</td>
+</tr>
+<tr class="even">
+<td>
+</td>
+<td colspan="2">
+Rhombus is a new language that is built on Racket. It offers the same
+kind of language extensibility as Racket itself, but using conventional
+(infix) notation. Although Rhombus is far from the first language to
+support Lisp-style macros without Lisp-style parentheses, Rhombus offers
+a novel synthesis of macro technology that is practical and expressive.
+A key element is the use of multiple binding spaces for context-specific
+sublanguages. For example, expressions and pattern-matching forms can
+use the same operators with different meanings and without creating
+conflicts. Context-sensitive bindings, in turn, facilitate a language
+design that reduces the notational distance between the core language
+and macro facilities. For example, repetitions can be defined and used
+in binding and expression contexts generally, which enables a smoother
+transition from programming to metaprogramming. Finally, since handling
+static information (such as types) is also a necessary part of growing
+macros beyond Lisp, Rhombus includes support in its expansion protocol
+for communicating static information among bindings and expressions. The
+Rhombus implementation demonstrates that all of these pieces can work
+together in a coherent and user-friendly language.
 </td>
 </tr>
 </tbody>
