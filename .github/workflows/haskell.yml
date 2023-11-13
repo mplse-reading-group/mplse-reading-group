@@ -22,6 +22,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: awalsh128/cache-apt-pkgs-action@latest
+      with:
+        packages: perl cpanminus
+        version: 1.0
     - uses: haskell/actions/setup@v2
       with:
         ghc-version: ${{env.GHC_VERSION}}
@@ -41,14 +45,12 @@ jobs:
           ${{ runner.os }}-
 
     - name: Install dependencies
-      run:
-        - sudo apt update
-        - sudo apt install -y perl cpanminus
-        - cpanm YAML::XS
-        - cpanm Carp::Assert
-        - cpanm Try::Tiny
-        - cpanm Carp
-        - cabal build --only-dependencies --enable-tests --enable-benchmarks
+      run: |
+        cpanm YAML::XS
+        cpanm Carp::Assert
+        cpanm Try::Tiny
+        cpanm Carp
+        cabal build --only-dependencies --enable-tests --enable-benchmarks
     - name: Build
       run: cabal build --enable-tests --enable-benchmarks all
     - name: hakyll build
