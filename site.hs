@@ -9,7 +9,6 @@ import Hakyll
 import Hakyll.Process
 import Prelude hiding (FilePath)
 import Text.Pandoc.Options
-import Turtle hiding (match)
 
 --------------------------------------------------------------------------------
 main :: IO ()
