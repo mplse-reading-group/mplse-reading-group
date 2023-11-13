@@ -48,6 +48,7 @@ for (@schedule){
         croak 'each element of the top-level array should be another array';
     };
     assert(@event == 5, 'each event should be a 5-tuple of (Speaker, Time ∧ Location, Paper Title, Link to Paper, Abstract)');
+    $event[4] =~ s/\n/<br>/g; # convert newlines to html linebreaks
     say <<"EOF";
         <tr class="odd">
             <td>$event[0]</td>
