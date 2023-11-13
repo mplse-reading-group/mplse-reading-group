@@ -2,8 +2,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Data.Monoid (mappend)
+
+import Data.Text.Lazy as T hiding (reverse)
+import Data.Text.Lazy.Encoding as T
 import Hakyll
+import Hakyll.Process
+import Prelude hiding (FilePath)
 import Text.Pandoc.Options
+import Turtle hiding (match)
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -56,9 +62,19 @@ main =
     match "schedules/*" $ do
       route $ setExtension "html"
       compile
-        $ pandocMdCompiler
+        $ execCompilerWith
+            (execName "./schedule_yaml2html.pl")
+            [HakFilePath]
+            CStdOut
+            >>= return . fmap (T.unpack . T.decodeUtf8)
             >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
             >>= relativizeUrls
+            --(newExtOutFilePath "html")
+      --route $ setExtension "html"
+      --compile
+      --  $ pandocMdCompiler
+      --      >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
+      --      >>= relativizeUrls
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
