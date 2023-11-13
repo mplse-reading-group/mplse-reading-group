@@ -46,10 +46,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cpanm YAML::XS
-        cpanm Carp::Assert
-        cpanm Try::Tiny
-        cpanm Carp
+        sudo cpanm YAML::XS
+        sudo cpanm Carp::Assert
+        sudo cpanm Try::Tiny
+        sudo cpanm Carp
         cabal build --only-dependencies --enable-tests --enable-benchmarks
     - name: Build
       run: cabal build --enable-tests --enable-benchmarks all
