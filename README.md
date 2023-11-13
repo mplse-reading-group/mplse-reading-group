@@ -1,13 +1,16 @@
 ## Modifying the Schedule
-The schedule for each semester is stored in a markdown file in **schedules/**.
+The schedule for each semester is stored in a yaml file in **schedules/**.
 
-**Current state of affairs**:
-Edit the html table, and commit those changes.
-You can try to do this on the github web interface, which gives you a preview and basic html editor support.
+Edit the yaml "table", and commit those changes.
+The table is an array of arrays, where each element of the top-level array is an array of:
+    - speaker name
+    - time ∧ location
+    - paper title
+    - link to paper
+    - abstract
+Take a look at an existing schedule for examples.
 
-**Wish**:
-Edit the pipe table, and commit those changes.
-You can do this on the github web interface, and it gives you a markdown preview.
+You can do this on the github web interface.
 
 The github workflow should automatically build and deploy the site at
 <https://mplse-reading-group.github.io>
