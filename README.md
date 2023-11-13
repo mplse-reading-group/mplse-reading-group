@@ -3,11 +3,13 @@ The schedule for each semester is stored in a yaml file in **schedules/**.
 
 Edit the yaml "table", and commit those changes.
 The table is an array of arrays, where each element of the top-level array is an array of:
+```
     - speaker name
     - time ∧ location
     - paper title
     - link to paper
     - abstract
+```
 Take a look at an existing schedule for examples.
 
 You can do this on the github web interface.
