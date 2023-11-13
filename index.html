@@ -49,215 +49,99 @@ Passcode: LAMBDA
     <body>
         <main role="main">
             <h1>2023-fall</h1>
-            <!---
-Unfortunately, I have not found a good way to edit grid tables.
-There's emacs table.el and org-mode, which are very close, but don't quite suffice.
-I will leave this here in case we find something.
+                <table style="width:100%;">
+        <colgroup>
+            <col style="width: 1%">
+            <col style="width: 2%">
+            <col style="width: 95%">
+        </colgroup>
+        <thead>
+            <tr class="header">
+                <th>Speaker</th>
+                <th>Time ∧ Location</th>
+                <th>Paper</th>
+            </tr>
+            <tr class="odd">
+                <th></th>
+                <th colspan="2">Abstract</th>
+            </tr>
+        </thead>
+        <tbody>
 
-+---------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Speaker       | Time ∧ Location      | Paper                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-+---------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|               | Abstract                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-+===============+======================+========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
-| Yash Gaitonde | 10/13 4-5pm@3941 BBB | [End-user encounters with lambda abstraction in spreadsheets](https://advait.org/publications-web/sarkar-2022-lambdas/)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-+---------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|               | The value of computational abstractions to non-expert end-user programmers is contentious. We study reactions to the lambda function in Microsoft Excel, which enables users to define their own functions using the spreadsheet formula language, through a thematic analysis of nearly 2,700 comments posted on the Reddit, Hacker News, YouTube, and Microsoft Tech Community online forums. We find that computational abstractions are viewed both as helpful and harmful, that users encounter learning and understanding barriers to applying them, and that there are deficiencies and opportunities in tooling such as in formula editing, versioning, reuse and sharing. We find that the introduction of lambda prompts new debate around whether spreadsheets are code, whether writing formulas can be considered programming, and whether spreadsheet users identify themselves as programmers. |
-+---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
---->
-<table style="width:100%;">
-<colgroup>
-<col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 95%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>
-Speaker
-</th>
-<th>
-Time ∧ Location
-</th>
-<th>
-Paper
-</th>
-</tr>
-<tr class="odd">
-<th>
-</th>
-<th colspan="2">
-Abstract
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>
-Yash Gaitonde
+        <tr class="odd">
+            <td>Yash Gaitonde</td>
+            <td>10/13 4-5pm@3941 BBB</td>
+            <td><a href="https://advait.org/publications-web/sarkar-2022-lambdas/">End-user encounters with lambda abstraction in spreadsheets</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">The value of computational abstractions to non-expert end-user programmers is contentious. We study reactions to the lambda function in Microsoft Excel, which enables users to define their own functions using the spreadsheet formula language, through a thematic analysis of nearly 2,700 comments posted on the Reddit, Hacker News, YouTube, and Microsoft Tech Community online forums. We find that computational abstractions are viewed both as helpful and harmful, that users encounter learning and understanding barriers to applying them, and that there are deficiencies and opportunities in tooling such as in formula editing, versioning, reuse and sharing. We find that the introduction of lambda prompts new debate around whether spreadsheets are code, whether writing formulas can be considered programming, and whether spreadsheet users identify themselves as programmers.
 </td>
-<td>
-10/13 4-5pm@3941 BBB
+        </tr>
+
+        <tr class="odd">
+            <td>Johnson He</td>
+            <td>10/27 4-5pm@3941 BBB</td>
+            <td><a href="https://prl.khoury.northeastern.edu/blog/static/scott-69-93-type-theoretical-alternative.pdf">A type-theoretical alternative to ISWIM, CUCH, OWHY</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">Abstract from the paper:
+
+The paper (first written in 1969 and circulated privately) concerns the definition, axiomatization, and applications of the hereditarily monotone and continuous functionals generated from the integers and the Booleans (plus “undefined” elements). The system is formulated as a typed system of combinators (or as a typed λ-calculus) with a recursion operator (the least fixed-point operator), and its proof rules are contrasted to a certain extent with those of the untyped λ-calculus. For publication (1993), a new preface has been added, and many bibliographical references and comments in footnotes have been appended.
 </td>
-<td>
-<a href="https://advait.org/publications-web/sarkar-2022-lambdas/">End-user
-encounters with lambda abstraction in spreadsheets</a>
+        </tr>
+
+        <tr class="odd">
+            <td>Steven Shaefer</td>
+            <td>11/03 4-5pm@3941 BBB</td>
+            <td><a href="https://plv.mpi-sws.org/rustbelt/popl18/paper.pdf">RustBelt: Securing the Foundations of the Rust Programming Language</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">TLDR; Some of the first verification of Rust's borrowing semantics. A little outdated now, but instructive.
+
+Rust is a new systems programming language that promises to overcome the seemingly fundamental tradeoff between high-level safety guarantees and low-level control over resource management. Unfortunately, none of Rust’s safety claims have been formally proven, and there is good reason to question whether they actually hold. Specifically, Rust employs a strong, ownership-based type system, but then extends the expressive power of this core type system through libraries that internally use unsafe features. In this paper, we give the first formal (and machine-checked) safety proof for a language representing a realistic subset of Rust. Our proof is extensible in the sense that, for each new Rust library that uses unsafe features, we can say what verification condition it must satisfy in order for it to be deemed a safe extension to the language. We have carried out this verification for some of the most important libraries that are used throughout the Rust ecosystem.
 </td>
-</tr>
-<tr class="even">
-<td>
+        </tr>
+
+        <tr class="odd">
+            <td>Andrew Blinn</td>
+            <td>11/10 4-5pm@3941 BBB</td>
+            <td><a href="https://users.cs.utah.edu/plt/publications/oopsla23-faadffggkkmppst.pdf">Rhombus: A New Spin on Macros without All the Parentheses</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">Rhombus is a new language that is built on Racket. It offers the same kind of language extensibility as Racket itself, but using conventional (infix) notation. Although Rhombus is far from the first language to support Lisp-style macros without Lisp-style parentheses, Rhombus offers a novel synthesis of macro technology that is practical and expressive. A key element is the use of multiple binding spaces for context-specific sublanguages.  For example, expressions and pattern-matching forms can use the same operators with different meanings and without creating conflicts. Context-sensitive bindings, in turn, facilitate a language design that reduces the notational distance between the core language and macro facilities. For example, repetitions can be defined and used in binding and expression contexts generally, which enables a smoother transition from programming to metaprogramming. Finally, since handling static information (such as types) is also a necessary part of growing macros beyond Lisp, Rhombus includes support in its expansion protocol for communicating static information among bindings and expressions. The Rhombus implementation demonstrates that all of these pieces can work together in a coherent and user-friendly language.
 </td>
-<td colspan="2">
-The value of computational abstractions to non-expert end-user
-programmers is contentious. We study reactions to the lambda function in
-Microsoft Excel, which enables users to define their own functions using
-the spreadsheet formula language, through a thematic analysis of nearly
-2,700 comments posted on the Reddit, Hacker News, YouTube, and Microsoft
-Tech Community online forums. We find that computational abstractions
-are viewed both as helpful and harmful, that users encounter learning
-and understanding barriers to applying them, and that there are
-deficiencies and opportunities in tooling such as in formula editing,
-versioning, reuse and sharing. We find that the introduction of lambda
-prompts new debate around whether spreadsheets are code, whether writing
-formulas can be considered programming, and whether spreadsheet users
-identify themselves as programmers.
+        </tr>
+
+        <tr class="odd">
+            <td>Matthew Keenan ∧ Elanor Tang</td>
+            <td>11/17 4-5pm@3941 BBB</td>
+            <td><a href="https://dl.acm.org/doi/pdf/10.1145/2980983.2908093">Program Synthesis from Polymorphic Refinement Types</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">We present a method for synthesizing recursive functions that provably satisfy a given specification in the form of a polymorphic refinement type. We observe that such specifications are particularly suitable for program synthesis for two reasons. First, they offer a unique combination of expressive power and decidability, which enables automatic verification—and hence synthesis—of nontrivial programs. Second, a type-based specification for a program can often be effectively decomposed into independent specifications for its components, causing the synthesizer to consider fewer component combinations and leading to a combinatorial reduction in the size of the search space. At the core of our synthesis procedure is a new algorithm for refinement type checking, which supports specification decomposition. We have evaluated our prototype implementation on a large set of synthesis problems and found that it exceeds the state of the art in terms of both scalability and usability. The tool was able to synthesize more complex programs than those reported in prior work (several sorting algorithms and operations on balanced search trees), as well as most of the benchmarks tackled by existing synthesizers, often starting from a more concise and intuitive user input.
 </td>
-</tr>
-<tr class="odd">
-<td>
-Johnson He
+        </tr>
+
+        <tr class="odd">
+            <td>Pranav Srinivasan</td>
+            <td>12/1 4-5pm@3941 BBB</td>
+            <td><a href>TODO</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">TODO
 </td>
-<td>
-10/27 4-5pm@3941 BBB
-</td>
-<td>
-<a href="https://prl.khoury.northeastern.edu/blog/static/scott-69-93-type-theoretical-alternative.pdf">A
-type-theoretical alternative to ISWIM, CUCH, OWHY</a>
-</td>
-</tr>
-<tr class="even">
-<td>
-</td>
-<td colspan="2">
-Abstract from the paper:<br><br>The paper (first written in 1969 and
-circulated privately) concerns the definition, axiomatization, and
-applications of the hereditarily monotone and continuous functionals
-generated from the integers and the Booleans (plus “undefined”
-elements). The system is formulated as a typed system of combinators (or
-as a typed λ-calculus) with a recursion operator (the least fixed-point
-operator), and its proof rules are contrasted to a certain extent with
-those of the untyped λ-calculus. For publication (1993), a new preface
-has been added, and many bibliographical references and com- ments in
-footnotes have been appended.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Steven Shaefer
-</td>
-<td>
-11/03 4-5pm@3941 BBB
-</td>
-<td>
-<a href="https://plv.mpi-sws.org/rustbelt/popl18/paper.pdf">RustBelt:
-Securing the Foundations of the Rust Programming Language</a>
-</td>
-</tr>
-<tr class="even">
-<td>
-</td>
-<td colspan="2">
-TLDR; Some of the first verification of Rust’s borrowing semantics. A
-little outdated now, but instructive.<br><br>Rust is a new systems
-programming language that promises to overcome the seemingly fundamental
-tradeoff between high-level safety guarantees and low-level control over
-resource management. Unfortunately, none of Rust’s safety claims have
-been formally proven, and there is good reason to question whether they
-actually hold. Specifically, Rust employs a strong, ownership-based type
-system, but then extends the expressive power of this core type system
-through libraries that internally use unsafe features. In this paper, we
-give the first formal (and machine-checked) safety proof for a language
-representing a realistic subset of Rust. Our proof is extensible in the
-sense that, for each new Rust library that uses unsafe features, we can
-say what verification condition it must satisfy in order for it to be
-deemed a safe extension to the language. We have carried out this
-verification for some of the most important libraries that are used
-throughout the Rust ecosystem.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Andrew Blinn
-</td>
-<td>
-11/10 4-5pm@3941 BBB
-</td>
-<td>
-<a href="https://users.cs.utah.edu/plt/publications/oopsla23-faadffggkkmppst.pdf">Rhombus:
-A New Spin on Macros without All the Parentheses</a>
-</td>
-</tr>
-<tr class="even">
-<td>
-</td>
-<td colspan="2">
-Rhombus is a new language that is built on Racket. It offers the same
-kind of language extensibility as Racket itself, but using conventional
-(infix) notation. Although Rhombus is far from the first language to
-support Lisp-style macros without Lisp-style parentheses, Rhombus offers
-a novel synthesis of macro technology that is practical and expressive.
-A key element is the use of multiple binding spaces for context-specific
-sublanguages. For example, expressions and pattern-matching forms can
-use the same operators with different meanings and without creating
-conflicts. Context-sensitive bindings, in turn, facilitate a language
-design that reduces the notational distance between the core language
-and macro facilities. For example, repetitions can be defined and used
-in binding and expression contexts generally, which enables a smoother
-transition from programming to metaprogramming. Finally, since handling
-static information (such as types) is also a necessary part of growing
-macros beyond Lisp, Rhombus includes support in its expansion protocol
-for communicating static information among bindings and expressions. The
-Rhombus implementation demonstrates that all of these pieces can work
-together in a coherent and user-friendly language.
-</td>
-</tr>
-<tr class="odd">
-<td>
-Matthew Keenan ∧ Elanor Tang
-</td>
-<td>
-11/17 4-5pm@3941 BBB
-</td>
-<td>
-<a href>TODO</a>
-</td>
-</tr>
-<tr class="even">
-<td>
-</td>
-<td colspan="2">
-TODO
-</td>
-</tr>
-<tr class="odd">
-<td>
-Pranav Srinivasan
-</td>
-<td>
-12/1 4-5pm@3941 BBB
-</td>
-<td>
-<a href>TODO</Pranav>
-</td>
-</tr>
-<tr class="even">
-<td>
-</td>
-<td colspan="2">
-TODO
-</td>
-</tr>
-</tbody>
-</table>
+        </tr>
+
+        </tbody>
+    </table>
+
+
         </main>
     </body>
 </html>
