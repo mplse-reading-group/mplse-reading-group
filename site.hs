@@ -45,35 +45,41 @@ main =
     --            >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
     --            >>= loadAndApplyTemplate "templates/default.html" archiveCtx
     --            >>= relativizeUrls
-    match "index.html" $ do
-      route idRoute
-      compile $ do
-        let indexCtx =
-              (listField
-                 "schedules"
-                 (bodyField "schedule_body" `mappend` defaultContext)
-                 (loadAll "schedules/*" >>= return . reverse))
-                `mappend` defaultContext
-        getResourceBody
-          >>= applyAsTemplate indexCtx
-          >>= loadAndApplyTemplate "templates/default.html" indexCtx
-          -- >>= relativizeUrls
-    match "schedules/*" $ do
-      route $ setExtension "html"
-      compile
-        $ execCompilerWith
-            (execName "./schedule_yaml2html.pl")
-            [HakFilePath]
-            CStdOut
-            >>= return . fmap (T.unpack . T.decodeUtf8)
-            >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
-            >>= relativizeUrls
+    let collate_schedules =
+          \files -> do
+            route idRoute
+            compile $ do
+              let indexCtx =
+                    (listField
+                       "current_schedules"
+                       (bodyField "schedule_body" `mappend` defaultContext)
+                       (loadAll files >>= return . reverse))
+                      `mappend` defaultContext
+              getResourceBody
+                >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+    match "index.html" $ collate_schedules "current_schedules/*"
+    match "past.html" $ collate_schedules "past_schedules/*"
+    let yaml2html = do
+          route $ setExtension "html"
+          compile
+            $ execCompilerWith
+                (execName "./schedule_yaml2html.pl")
+                [HakFilePath]
+                CStdOut
+                >>= return . fmap (T.unpack . T.decodeUtf8)
+                >>= loadAndApplyTemplate
+                      "templates/schedule.html"
+                      defaultContext
+                >>= relativizeUrls
+    match "current_schedules/*" yaml2html
             --(newExtOutFilePath "html")
       --route $ setExtension "html"
       --compile
       --  $ pandocMdCompiler
       --      >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
       --      >>= relativizeUrls
+    match "past_schedules/*" yaml2html
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
