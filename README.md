@@ -21,8 +21,10 @@ The github workflow should automatically build and deploy the site at
     cabal update
     cabal build
     cabal run -- site rebuild
+#### Check Hakyll Build
+    cabal run site build
 #### Previewing Changes
-    cabal run -- site watch --hostname HOSTNAME --port PORT
+    cabal run -- site watch --host HOSTNAME --port PORT
 #### Deploying
 The github workflow builds the site from *trunk* and copies the generated site contents from **docs/** to the branch *gh-pages*.
 Github pages then serves *gh-pages*.

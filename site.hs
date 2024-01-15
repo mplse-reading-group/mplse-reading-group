@@ -3,6 +3,7 @@
 
 import Data.Monoid (mappend)
 
+import Data.String
 import Data.Text.Lazy as T hiding (reverse)
 import Data.Text.Lazy.Encoding as T
 import Hakyll
@@ -46,20 +47,20 @@ main =
     --            >>= loadAndApplyTemplate "templates/default.html" archiveCtx
     --            >>= relativizeUrls
     let collate_schedules =
-          \files -> do
+          \dir -> do
             route idRoute
             compile $ do
               let indexCtx =
                     (listField
-                       "current_schedules"
+                       dir
                        (bodyField "schedule_body" `mappend` defaultContext)
-                       (loadAll files >>= return . reverse))
+                       (loadAll (fromString $ dir ++ "/*") >>= return . reverse))
                       `mappend` defaultContext
               getResourceBody
                 >>= applyAsTemplate indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
-    match "index.html" $ collate_schedules "current_schedules/*"
-    match "past.html" $ collate_schedules "past_schedules/*"
+    match "index.html" $ collate_schedules "current_schedules"
+    match "past.html" $ collate_schedules "past_schedules"
     let yaml2html = do
           route $ setExtension "html"
           compile
