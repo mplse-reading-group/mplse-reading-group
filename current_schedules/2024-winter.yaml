@@ -42,9 +42,10 @@
     By considering continuations, local transformation strategies can take advantage of global knowledge.
     The general results are followed by two examples: the ɑ-β tree pruning algorithm and an algorithm for the conversion of a propositional formula to conjunctive normal form.
 -
-  - TODO
-  - TODO
-  - TODO
-  - "TODO"
+  - Matthew Keenan
+  - "March 29th, 4-5pm@3901 BBB"
+  - "Holbert: Reading, Writing and Proving in the Browser"
+  - "http://liamoc.net/holbert/"
   - >
-    TODO
+    Abstract:
+    This paper presents Holbert a work-in-progress pedagogical proof assistant and online textbook platform, aimed at the educational use-case, specifically for the teaching of programming language theory. Holbert allows proof exercises and rule definitions to be embedded directly in an online textbook, where proofs and rules can be manipulated using a graphical interface. We give an overview of the logical foundations of Holbert, examples of its use, and give an update as to its current implementation status.
