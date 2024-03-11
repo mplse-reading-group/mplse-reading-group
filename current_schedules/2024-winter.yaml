@@ -23,11 +23,15 @@
     This paper is a step along this path, which we hope will lead both to practical systems for reasoning about programs’ resource usage, and to theoretical use as a form of synthetic computational complexity theory.
 -
   - Johnson He
-  - "March 15th?, 4-5pm@3901BBB"
-  - TBD, something about semantics
-  - "Link TBD"
+  - "March 15th, 4-5pm@3901BBB"
+  - The groupoid interpretation of type theory (1998)
+  - "https://ebookcentral-proquest-com.proxy.lib.umich.edu/lib/umichigan/reader.action?docID=684605&ppg=92"
   - >
-    Any requests?
+    This is the extended and slightly more modern version of the historic paper,  
+    "The Groupoid Model Refutes Uniqueness of Identity Proofs (1994)",
+    using Categories with Families (CwFs) instead of Categories with Attributes (CwAs).
+
+    I hope we'll see a more modern notion of model in the reading group soon.
 -
   - Yuchen Jiang
   - "March 29th, 4-5pm@3901BBB"
