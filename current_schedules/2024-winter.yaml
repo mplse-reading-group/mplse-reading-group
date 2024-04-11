@@ -58,6 +58,13 @@
     
     This paper presents Holbert a work-in-progress pedagogical proof assistant and online textbook platform, aimed at the educational use-case, specifically for the teaching of programming language theory. Holbert allows proof exercises and rule definitions to be embedded directly in an online textbook, where proofs and rules can be manipulated using a graphical interface. We give an overview of the logical foundations of Holbert, examples of its use, and give an update as to its current implementation status.
 -
+  - June Kim
+  - "April 12th, 4-5pm@3901 BBB"
+  - "Syntax-Guided Synthesis"
+  - "https://dspace.mit.edu/bitstream/handle/1721.1/137905.2/SyGuS_JournalVersion.pdf"
+  - >
+    TODO
+-
   - Steven Schaefer
   - "April 19th, 4-5pm@3901 BBB"
   - "A Model of Type Theory in Simplicial Sets"
