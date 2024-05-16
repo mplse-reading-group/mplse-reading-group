@@ -1,0 +1,54 @@
+#-
+#  - Name
+#  - Date Time@Location
+#  - Title
+#  - "url"
+#  - >
+#    Abstract
+-
+  - Wenxuan Guo
+  - March 10th, 4-5pm@zoom
+  - ProofBlocks
+  - "no links"
+  - >
+    1. Autogradeable Scaffolding Activities for Learning to Write Proofs
+
+
+    Authors: Seth Poulsen, Mahesh Viswanathan, Geoffrey L. Herman, and Matthew West 
+
+
+    Abstract: This paper presents "Proof Blocks," a novel software tool
+      designed to assist in the education of mathematical proofs by providing a
+      platform where students can engage with proofs through a drag-and-drop
+      interface. This tool automates grading and offers immediate feedback,
+      making it particularly valuable in large classes.
+
+
+    2. Efficiency of Learning from Proof Blocks Versus Writing Proofs
+
+
+    Authors: Seth Poulsen, Yael Gertner, Benjamin Cosman, Matthew West, and Geoffrey L. Herman
+
+
+    Abstract: This study evaluates the effectiveness of
+      Proof Blocks compared to traditional proof-writing exercises. It focuses
+      on the efficiency and learning gains associated with each method through
+      a controlled study involving students from a discrete mathematics course.
+
+
+    3. Autogenerating Natural Language Proofs for Proof Education
+
+
+    Authors: Seth Poulsen, Matthew West, and Talia Ringer
+
+
+    Abstract: This research introduces a Coq plugin that generates natural language proofs from formal proofs, aiming to make proof education more accessible and understandable to students, especially beginners.
+
+
+    4. Evaluation of Educational Software Tools in Teaching Proofs
+
+
+    Authors: Seth Poulsen, Geoffrey L. Herman, Mahesh Viswanathan, Matthew West
+
+
+    Abstract: This paper examines the use of Proof Blocks in exams for a discrete mathematics course, analyzing thousands of student responses. The data indicates that Proof Blocks are easier for students compared to traditional written proofs, yet yield similar insights into student understanding. Surveys also suggest that students find the interface user-friendly and effective in assessing their proof-writing skills.
