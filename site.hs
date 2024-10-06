@@ -80,7 +80,7 @@ main =
       --  $ pandocMdCompiler
       --      >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
       --      >>= relativizeUrls
-    match "past_schedules/*" (yaml2html "2")
+    match "past_schedules/*" (yaml2html "0")
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
