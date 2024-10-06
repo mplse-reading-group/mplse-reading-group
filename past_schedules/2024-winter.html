@@ -29,43 +29,13 @@
         <tbody>
 
         <tr class="odd">
-            <td>Steven Schaefer</td>
-            <td>April 19th, 4-5pm@3901 BBB</td>
-            <td><a href="https://www2.mathematik.tu-darmstadt.de/~streicher/sstt.pdf">A Model of Type Theory in Simplicial Sets</a></td>
+            <td>Eric Bond</td>
+            <td>March 8th, 4-5pm in 3901 BBB</td>
+            <td><a href="https://dl.acm.org/doi/10.1145/2535838.2535852">Polynomial Time and Dependent Types</a></td>
         </tr>
         <tr class="even">
             <td></td>
-            <td colspan="2">In the same vein as Johnson's presentation of how the groupoid model refutes UIP, I'd like to continue going through a historical treament of homotopy type theory (HoTT). Streicher's paper presents simplicial sets --- a notion of spaces --- as a model of type theory. We will investigate this model and role that Voevodsky's univalence axiom plays in it.<br></td>
-        </tr>
-
-        <tr class="odd">
-            <td>June Kim</td>
-            <td>April 12th, 4-5pm@3901 BBB</td>
-            <td><a href="https://dspace.mit.edu/bitstream/handle/1721.1/137905.2/SyGuS_JournalVersion.pdf">Syntax-Guided Synthesis</a></td>
-        </tr>
-        <tr class="even">
-            <td></td>
-            <td colspan="2">The classical formulation of the program-synthesis problem is to find a program that meets a correctness specification given as a logical formula. Recent work on program synthesis and program optimization illustrates many potential benefits of allowing the user to supplement the logical specification with a syntactic template that constrains the space of allowed implementations. Our goal is to identify the core computational problem common to these proposals in a logical framework. The input to the syntax-guided synthesis problem (SyGuS) consists of a background theory, a semantic correctness specification for the desired program given by a logical formula, and a syntactic set of candidate implementations given by a grammar. The computational problem then is to find an implementation from the set of candidate expressions so that it satisfies the specification in the given theory. We describe alternative solution strategies that combine learning, counterexample analysis and constraint solving. We report on prototype implementations, and present experimental results on the set of benchmarks collected as part of the first SyGuS-Comp competition held in July 2014.<br></td>
-        </tr>
-
-        <tr class="odd">
-            <td>Matthew Keenan</td>
-            <td>April 5th, 4-5pm@3901 BBB</td>
-            <td><a href="http://liamoc.net/holbert/">Holbert: Reading, Writing and Proving in the Browser</a></td>
-        </tr>
-        <tr class="even">
-            <td></td>
-            <td colspan="2">Abstract:<br>This paper presents Holbert a work-in-progress pedagogical proof assistant and online textbook platform, aimed at the educational use-case, specifically for the teaching of programming language theory. Holbert allows proof exercises and rule definitions to be embedded directly in an online textbook, where proofs and rules can be manipulated using a graphical interface. We give an overview of the logical foundations of Holbert, examples of its use, and give an update as to its current implementation status.<br></td>
-        </tr>
-
-        <tr class="odd">
-            <td>Yuchen Jiang</td>
-            <td>March 29th, 4-5pm@3901BBB</td>
-            <td><a href="https://dl.acm.org/doi/10.1145/322169.322183">Continuation-Based Program Transformation Strategies</a></td>
-        </tr>
-        <tr class="even">
-            <td></td>
-            <td colspan="2">I'll present Mitchell Wand's (classic) work on CPS transformation. The topic is mature and well-known, so I'll try my best to make it more entertaining.<br><br>Abstract:<br>Program transformations often involve the generalization of a function to take additional arguments. It is shown that in many cases such an additional variable arises as a representation of the continuation or global context in which the function is evaluated. By considering continuations, local transformation strategies can take advantage of global knowledge. The general results are followed by two examples: the ɑ-β tree pruning algorithm and an algorithm for the conversion of a propositional formula to conjunctive normal form.<br></td>
+            <td colspan="2">I will be presenting Bob Atkey's 2024 POPL paper: Abstract: We combine dependent types with linear type systems that soundly and completely capture polynomial time computation.  We explore two systems for capturing polynomial time:  one system that disallows construction of iterable data,  and one, based on the LFPL system of Martin Hofmann, that controls construction via a payment method.  Both of these are extended to full dependent types via Quantitative Type Theory, allowing for arbitrary computation in types alongside guaranteed polynomial time computation in terms.  We prove the soundness of the systems using a realisability technique due to Dal Lago and Hofmann. Our long-term goal is to combine the extensional reasoning of type theory with intensional reasoning about the resources intrinsically consumed by programs.  This paper is a step along this path, which we hope will lead both to practical systems for reasoning about programs’ resource usage, and to theoretical use as a form of synthetic computational complexity theory.<br></td>
         </tr>
 
         <tr class="odd">
@@ -79,13 +49,43 @@
         </tr>
 
         <tr class="odd">
-            <td>Eric Bond</td>
-            <td>March 8th, 4-5pm in 3901 BBB</td>
-            <td><a href="https://dl.acm.org/doi/10.1145/2535838.2535852">Polynomial Time and Dependent Types</a></td>
+            <td>Yuchen Jiang</td>
+            <td>March 29th, 4-5pm@3901BBB</td>
+            <td><a href="https://dl.acm.org/doi/10.1145/322169.322183">Continuation-Based Program Transformation Strategies</a></td>
         </tr>
         <tr class="even">
             <td></td>
-            <td colspan="2">I will be presenting Bob Atkey's 2024 POPL paper: Abstract: We combine dependent types with linear type systems that soundly and completely capture polynomial time computation.  We explore two systems for capturing polynomial time:  one system that disallows construction of iterable data,  and one, based on the LFPL system of Martin Hofmann, that controls construction via a payment method.  Both of these are extended to full dependent types via Quantitative Type Theory, allowing for arbitrary computation in types alongside guaranteed polynomial time computation in terms.  We prove the soundness of the systems using a realisability technique due to Dal Lago and Hofmann. Our long-term goal is to combine the extensional reasoning of type theory with intensional reasoning about the resources intrinsically consumed by programs.  This paper is a step along this path, which we hope will lead both to practical systems for reasoning about programs’ resource usage, and to theoretical use as a form of synthetic computational complexity theory.<br></td>
+            <td colspan="2">I'll present Mitchell Wand's (classic) work on CPS transformation. The topic is mature and well-known, so I'll try my best to make it more entertaining.<br><br>Abstract:<br>Program transformations often involve the generalization of a function to take additional arguments. It is shown that in many cases such an additional variable arises as a representation of the continuation or global context in which the function is evaluated. By considering continuations, local transformation strategies can take advantage of global knowledge. The general results are followed by two examples: the ɑ-β tree pruning algorithm and an algorithm for the conversion of a propositional formula to conjunctive normal form.<br></td>
+        </tr>
+
+        <tr class="odd">
+            <td>Matthew Keenan</td>
+            <td>April 5th, 4-5pm@3901 BBB</td>
+            <td><a href="http://liamoc.net/holbert/">Holbert: Reading, Writing and Proving in the Browser</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">Abstract:<br>This paper presents Holbert a work-in-progress pedagogical proof assistant and online textbook platform, aimed at the educational use-case, specifically for the teaching of programming language theory. Holbert allows proof exercises and rule definitions to be embedded directly in an online textbook, where proofs and rules can be manipulated using a graphical interface. We give an overview of the logical foundations of Holbert, examples of its use, and give an update as to its current implementation status.<br></td>
+        </tr>
+
+        <tr class="odd">
+            <td>June Kim</td>
+            <td>April 12th, 4-5pm@3901 BBB</td>
+            <td><a href="https://dspace.mit.edu/bitstream/handle/1721.1/137905.2/SyGuS_JournalVersion.pdf">Syntax-Guided Synthesis</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">The classical formulation of the program-synthesis problem is to find a program that meets a correctness specification given as a logical formula. Recent work on program synthesis and program optimization illustrates many potential benefits of allowing the user to supplement the logical specification with a syntactic template that constrains the space of allowed implementations. Our goal is to identify the core computational problem common to these proposals in a logical framework. The input to the syntax-guided synthesis problem (SyGuS) consists of a background theory, a semantic correctness specification for the desired program given by a logical formula, and a syntactic set of candidate implementations given by a grammar. The computational problem then is to find an implementation from the set of candidate expressions so that it satisfies the specification in the given theory. We describe alternative solution strategies that combine learning, counterexample analysis and constraint solving. We report on prototype implementations, and present experimental results on the set of benchmarks collected as part of the first SyGuS-Comp competition held in July 2014.<br></td>
+        </tr>
+
+        <tr class="odd">
+            <td>Steven Schaefer</td>
+            <td>April 19th, 4-5pm@3901 BBB</td>
+            <td><a href="https://www2.mathematik.tu-darmstadt.de/~streicher/sstt.pdf">A Model of Type Theory in Simplicial Sets</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">In the same vein as Johnson's presentation of how the groupoid model refutes UIP, I'd like to continue going through a historical treament of homotopy type theory (HoTT). Streicher's paper presents simplicial sets --- a notion of spaces --- as a model of type theory. We will investigate this model and role that Voevodsky's univalence axiom plays in it.<br></td>
         </tr>
 
         </tbody>

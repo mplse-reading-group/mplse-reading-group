@@ -29,43 +29,13 @@
         <tbody>
 
         <tr class="odd">
-            <td>Informal</td>
-            <td>12/8 4-5pm@3941 BBB</td>
-            <td><a href="https://www.cs.cmu.edu/~crary/819-f09/Murthy91.pdf">An Evaluation Semantics for Classical Proofs</a></td>
+            <td>Yash Gaitonde</td>
+            <td>10/13 4-5pm@3941 BBB</td>
+            <td><a href="https://advait.org/publications-web/sarkar-2022-lambdas/">End-user encounters with lambda abstraction in spreadsheets</a></td>
         </tr>
         <tr class="even">
             <td></td>
-            <td colspan="2"></td>
-        </tr>
-
-        <tr class="odd">
-            <td>Matthew Keenan ∧ Elanor Tang</td>
-            <td>11/17 4-5pm@3941 BBB</td>
-            <td><a href="https://dl.acm.org/doi/pdf/10.1145/2980983.2908093">Program Synthesis from Polymorphic Refinement Types</a></td>
-        </tr>
-        <tr class="even">
-            <td></td>
-            <td colspan="2">We present a method for synthesizing recursive functions that provably satisfy a given specification in the form of a polymorphic refinement type. We observe that such specifications are particularly suitable for program synthesis for two reasons. First, they offer a unique combination of expressive power and decidability, which enables automatic verification—and hence synthesis—of nontrivial programs. Second, a type-based specification for a program can often be effectively decomposed into independent specifications for its components, causing the synthesizer to consider fewer component combinations and leading to a combinatorial reduction in the size of the search space. At the core of our synthesis procedure is a new algorithm for refinement type checking, which supports specification decomposition. We have evaluated our prototype implementation on a large set of synthesis problems and found that it exceeds the state of the art in terms of both scalability and usability. The tool was able to synthesize more complex programs than those reported in prior work (several sorting algorithms and operations on balanced search trees), as well as most of the benchmarks tackled by existing synthesizers, often starting from a more concise and intuitive user input.<br></td>
-        </tr>
-
-        <tr class="odd">
-            <td>Andrew Blinn</td>
-            <td>11/10 4-5pm@3941 BBB</td>
-            <td><a href="https://users.cs.utah.edu/plt/publications/oopsla23-faadffggkkmppst.pdf">Rhombus: A New Spin on Macros without All the Parentheses</a></td>
-        </tr>
-        <tr class="even">
-            <td></td>
-            <td colspan="2">Rhombus is a new language that is built on Racket. It offers the same kind of language extensibility as Racket itself, but using conventional (infix) notation. Although Rhombus is far from the first language to support Lisp-style macros without Lisp-style parentheses, Rhombus offers a novel synthesis of macro technology that is practical and expressive. A key element is the use of multiple binding spaces for context-specific sublanguages.  For example, expressions and pattern-matching forms can use the same operators with different meanings and without creating conflicts. Context-sensitive bindings, in turn, facilitate a language design that reduces the notational distance between the core language and macro facilities. For example, repetitions can be defined and used in binding and expression contexts generally, which enables a smoother transition from programming to metaprogramming. Finally, since handling static information (such as types) is also a necessary part of growing macros beyond Lisp, Rhombus includes support in its expansion protocol for communicating static information among bindings and expressions. The Rhombus implementation demonstrates that all of these pieces can work together in a coherent and user-friendly language.<br></td>
-        </tr>
-
-        <tr class="odd">
-            <td>Steven Shaefer</td>
-            <td>11/03 4-5pm@3941 BBB</td>
-            <td><a href="https://plv.mpi-sws.org/rustbelt/popl18/paper.pdf">RustBelt: Securing the Foundations of the Rust Programming Language</a></td>
-        </tr>
-        <tr class="even">
-            <td></td>
-            <td colspan="2">TLDR; Some of the first verification of Rust's borrowing semantics. A little outdated now, but instructive.<br><br>Rust is a new systems programming language that promises to overcome the seemingly fundamental tradeoff between high-level safety guarantees and low-level control over resource management. Unfortunately, none of Rust’s safety claims have been formally proven, and there is good reason to question whether they actually hold. Specifically, Rust employs a strong, ownership-based type system, but then extends the expressive power of this core type system through libraries that internally use unsafe features. In this paper, we give the first formal (and machine-checked) safety proof for a language representing a realistic subset of Rust. Our proof is extensible in the sense that, for each new Rust library that uses unsafe features, we can say what verification condition it must satisfy in order for it to be deemed a safe extension to the language. We have carried out this verification for some of the most important libraries that are used throughout the Rust ecosystem.<br></td>
+            <td colspan="2">The value of computational abstractions to non-expert end-user programmers is contentious. We study reactions to the lambda function in Microsoft Excel, which enables users to define their own functions using the spreadsheet formula language, through a thematic analysis of nearly 2,700 comments posted on the Reddit, Hacker News, YouTube, and Microsoft Tech Community online forums. We find that computational abstractions are viewed both as helpful and harmful, that users encounter learning and understanding barriers to applying them, and that there are deficiencies and opportunities in tooling such as in formula editing, versioning, reuse and sharing. We find that the introduction of lambda prompts new debate around whether spreadsheets are code, whether writing formulas can be considered programming, and whether spreadsheet users identify themselves as programmers.<br></td>
         </tr>
 
         <tr class="odd">
@@ -79,13 +49,43 @@
         </tr>
 
         <tr class="odd">
-            <td>Yash Gaitonde</td>
-            <td>10/13 4-5pm@3941 BBB</td>
-            <td><a href="https://advait.org/publications-web/sarkar-2022-lambdas/">End-user encounters with lambda abstraction in spreadsheets</a></td>
+            <td>Steven Shaefer</td>
+            <td>11/03 4-5pm@3941 BBB</td>
+            <td><a href="https://plv.mpi-sws.org/rustbelt/popl18/paper.pdf">RustBelt: Securing the Foundations of the Rust Programming Language</a></td>
         </tr>
         <tr class="even">
             <td></td>
-            <td colspan="2">The value of computational abstractions to non-expert end-user programmers is contentious. We study reactions to the lambda function in Microsoft Excel, which enables users to define their own functions using the spreadsheet formula language, through a thematic analysis of nearly 2,700 comments posted on the Reddit, Hacker News, YouTube, and Microsoft Tech Community online forums. We find that computational abstractions are viewed both as helpful and harmful, that users encounter learning and understanding barriers to applying them, and that there are deficiencies and opportunities in tooling such as in formula editing, versioning, reuse and sharing. We find that the introduction of lambda prompts new debate around whether spreadsheets are code, whether writing formulas can be considered programming, and whether spreadsheet users identify themselves as programmers.<br></td>
+            <td colspan="2">TLDR; Some of the first verification of Rust's borrowing semantics. A little outdated now, but instructive.<br><br>Rust is a new systems programming language that promises to overcome the seemingly fundamental tradeoff between high-level safety guarantees and low-level control over resource management. Unfortunately, none of Rust’s safety claims have been formally proven, and there is good reason to question whether they actually hold. Specifically, Rust employs a strong, ownership-based type system, but then extends the expressive power of this core type system through libraries that internally use unsafe features. In this paper, we give the first formal (and machine-checked) safety proof for a language representing a realistic subset of Rust. Our proof is extensible in the sense that, for each new Rust library that uses unsafe features, we can say what verification condition it must satisfy in order for it to be deemed a safe extension to the language. We have carried out this verification for some of the most important libraries that are used throughout the Rust ecosystem.<br></td>
+        </tr>
+
+        <tr class="odd">
+            <td>Andrew Blinn</td>
+            <td>11/10 4-5pm@3941 BBB</td>
+            <td><a href="https://users.cs.utah.edu/plt/publications/oopsla23-faadffggkkmppst.pdf">Rhombus: A New Spin on Macros without All the Parentheses</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">Rhombus is a new language that is built on Racket. It offers the same kind of language extensibility as Racket itself, but using conventional (infix) notation. Although Rhombus is far from the first language to support Lisp-style macros without Lisp-style parentheses, Rhombus offers a novel synthesis of macro technology that is practical and expressive. A key element is the use of multiple binding spaces for context-specific sublanguages.  For example, expressions and pattern-matching forms can use the same operators with different meanings and without creating conflicts. Context-sensitive bindings, in turn, facilitate a language design that reduces the notational distance between the core language and macro facilities. For example, repetitions can be defined and used in binding and expression contexts generally, which enables a smoother transition from programming to metaprogramming. Finally, since handling static information (such as types) is also a necessary part of growing macros beyond Lisp, Rhombus includes support in its expansion protocol for communicating static information among bindings and expressions. The Rhombus implementation demonstrates that all of these pieces can work together in a coherent and user-friendly language.<br></td>
+        </tr>
+
+        <tr class="odd">
+            <td>Matthew Keenan ∧ Elanor Tang</td>
+            <td>11/17 4-5pm@3941 BBB</td>
+            <td><a href="https://dl.acm.org/doi/pdf/10.1145/2980983.2908093">Program Synthesis from Polymorphic Refinement Types</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2">We present a method for synthesizing recursive functions that provably satisfy a given specification in the form of a polymorphic refinement type. We observe that such specifications are particularly suitable for program synthesis for two reasons. First, they offer a unique combination of expressive power and decidability, which enables automatic verification—and hence synthesis—of nontrivial programs. Second, a type-based specification for a program can often be effectively decomposed into independent specifications for its components, causing the synthesizer to consider fewer component combinations and leading to a combinatorial reduction in the size of the search space. At the core of our synthesis procedure is a new algorithm for refinement type checking, which supports specification decomposition. We have evaluated our prototype implementation on a large set of synthesis problems and found that it exceeds the state of the art in terms of both scalability and usability. The tool was able to synthesize more complex programs than those reported in prior work (several sorting algorithms and operations on balanced search trees), as well as most of the benchmarks tackled by existing synthesizers, often starting from a more concise and intuitive user input.<br></td>
+        </tr>
+
+        <tr class="odd">
+            <td>Informal</td>
+            <td>12/8 4-5pm@3941 BBB</td>
+            <td><a href="https://www.cs.cmu.edu/~crary/819-f09/Murthy91.pdf">An Evaluation Semantics for Classical Proofs</a></td>
+        </tr>
+        <tr class="even">
+            <td></td>
+            <td colspan="2"></td>
         </tr>
 
         </tbody>
