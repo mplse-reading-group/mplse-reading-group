@@ -39,7 +39,7 @@ say <<'EOF';
         </thead>
         <tbody>
 EOF
-for (@schedule){
+for (reverse @schedule){
     my @event;
     try{
         @event = @{$_};
