@@ -10,6 +10,7 @@ use Carp;
 use open qw(:std :encoding(UTF-8));
 
 assert(@ARGV >= 1, 'first argument should be input yaml filename');
+assert(@ARGV >= 2, 'second argument should be whether to reverse the schedule');
 my $sched = LoadFile($ARGV[0]);
 my @schedule;
 try{
@@ -39,7 +40,8 @@ say <<'EOF';
         </thead>
         <tbody>
 EOF
-for (reverse @schedule){
+@schedule = reverse @schedule if $ARGV[1];
+for (@schedule){
     my @event;
     try{
         @event = @{$_};

@@ -61,26 +61,26 @@ main =
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
     match "index.html" $ collate_schedules "current_schedules"
     match "past.html" $ collate_schedules "past_schedules"
-    let yaml2html = do
+    let yaml2html shouldReverse = do
           route $ setExtension "html"
           compile
             $ execCompilerWith
                 (execName "./schedule_yaml2html.pl")
-                [HakFilePath]
+                [HakFilePath, shouldReverse]
                 CStdOut
                 >>= return . fmap (T.unpack . T.decodeUtf8)
                 >>= loadAndApplyTemplate
                       "templates/schedule.html"
                       defaultContext
                 >>= relativizeUrls
-    match "current_schedules/*" yaml2html
+    match "current_schedules/*" (yaml2html True)
             --(newExtOutFilePath "html")
       --route $ setExtension "html"
       --compile
       --  $ pandocMdCompiler
       --      >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
       --      >>= relativizeUrls
-    match "past_schedules/*" yaml2html
+    match "past_schedules/*" (yaml2html False)
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
