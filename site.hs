@@ -66,21 +66,21 @@ main =
           compile
             $ execCompilerWith
                 (execName "./schedule_yaml2html.pl")
-                [HakFilePath, shouldReverse]
+                [HakFilePath, ProcArg shouldReverse]
                 CStdOut
                 >>= return . fmap (T.unpack . T.decodeUtf8)
                 >>= loadAndApplyTemplate
                       "templates/schedule.html"
                       defaultContext
                 >>= relativizeUrls
-    match "current_schedules/*" (yaml2html True)
+    match "current_schedules/*" (yaml2html "1")
             --(newExtOutFilePath "html")
       --route $ setExtension "html"
       --compile
       --  $ pandocMdCompiler
       --      >>= loadAndApplyTemplate "templates/schedule.html" defaultContext
       --      >>= relativizeUrls
-    match "past_schedules/*" (yaml2html False)
+    match "past_schedules/*" (yaml2html "2")
     match "templates/*" $ compile templateBodyCompiler
 
 --------------------------------------------------------------------------------
