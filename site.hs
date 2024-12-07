@@ -3,6 +3,11 @@
 
 import Data.Monoid (mappend)
 
+import Data.Bifunctor
+import Data.ByteString.Char8 as B (ByteString, pack)
+import Data.Function
+import Data.List
+import Data.Maybe
 import Data.String
 import Data.Text.Lazy as T hiding (reverse)
 import Data.Text.Lazy.Encoding as T
@@ -10,6 +15,7 @@ import Hakyll
 import Hakyll.Process
 import Prelude hiding (FilePath)
 import Text.Pandoc.Options
+import qualified Text.Regex.PCRE.Light as PCRE
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -44,6 +50,7 @@ main =
     --                defaultContext
     --        makeItem ""
     --            >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+    --
     --            >>= loadAndApplyTemplate "templates/default.html" archiveCtx
     --            >>= relativizeUrls
     let collate_schedules =
@@ -51,11 +58,39 @@ main =
             route idRoute
             compile $ do
               let indexCtx =
-                    (listField
-                       dir
-                       (bodyField "schedule_body" `mappend` defaultContext)
-                       (loadAll (fromString $ dir ++ "/*") >>= return . reverse))
-                      `mappend` defaultContext
+                    let comparator (x :: Identifier) (y :: Identifier) =
+                          let re :: PCRE.Regex =
+                                PCRE.compile
+                                  ("(\\d)+-(fall|winter|spring-summer)")
+                                  [] --[PCRE.caseless]
+                           in fromJust $ do
+                                xmatches :: [ByteString] <-
+                                  PCRE.match re (B.pack . show $ x) []
+                                ymatches :: [ByteString] <-
+                                  PCRE.match re (B.pack . show $ y) []
+                                let make_spring_summer_greatest semester =
+                                      if semester == "spring-summer"
+                                        then "zzz" -- HACK: fall, winter, zzz is lexicographical order
+                                        else semester
+                                return
+                                  $ case (xmatches !! 1)
+                                           `compare` (ymatches !! 1) of
+                                      EQ ->
+                                        let (d, d') =
+                                              bimap
+                                                make_spring_summer_greatest
+                                                make_spring_summer_greatest
+                                                (xmatches !! 2, ymatches !! 2)
+                                         in d `compare` d'
+                                      c -> c
+                     in (listField
+                           dir
+                           (bodyField "schedule_body" `mappend` defaultContext)
+                           (loadAll (fromString $ dir ++ "/*")
+                              >>= return
+                                    . reverse
+                                    . (sortBy (comparator `on` itemIdentifier))))
+                          `mappend` defaultContext
               getResourceBody
                 >>= applyAsTemplate indexCtx
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
