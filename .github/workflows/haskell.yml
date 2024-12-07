@@ -46,6 +46,7 @@ jobs:
 
     - name: Install dependencies
       run: |
+        sudo apt install libpcre3-dev
         sudo cpanm YAML::XS
         sudo cpanm Carp::Assert
         sudo cpanm Try::Tiny
