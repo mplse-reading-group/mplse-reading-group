@@ -68,18 +68,19 @@ main =
                                   PCRE.match re (B.pack . show $ x) []
                                 ymatches :: [ByteString] <-
                                   PCRE.match re (B.pack . show $ y) []
-                                let make_spring_summer_greatest semester =
-                                      if semester == "spring-summer"
-                                        then "zzz" -- HACK: fall, winter, zzz is lexicographical order
-                                        else semester
+                                -- HACK: fall, spring-summer, winter is lexicographical order, but want winter, spring-summer, fall
+                                let make_into_lexicographic_order semester
+                                      | semester == "fall" = "xaa"
+                                      | semester == "winter" = "xab"
+                                      | semester == "spring-summer" = "xac"
                                 return
                                   $ case (xmatches !! 1)
                                            `compare` (ymatches !! 1) of
                                       EQ ->
                                         let (d, d') =
                                               bimap
-                                                make_spring_summer_greatest
-                                                make_spring_summer_greatest
+                                                make_into_lexicographic_order
+                                                make_into_lexicographic_order
                                                 (xmatches !! 2, ymatches !! 2)
                                          in d `compare` d'
                                       c -> c
