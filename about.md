@@ -17,5 +17,5 @@ to sign up for a week.
 
 Or contact the organizer(s):
 
-- gaitonde α umich δ edu
-- hejohns α umich δ edu
+- abanduk α umich δ edu
+- stschaef α umich δ edu

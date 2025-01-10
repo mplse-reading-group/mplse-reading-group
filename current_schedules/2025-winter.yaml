@@ -1,0 +1,37 @@
+#-
+#  - Name
+#  - Date Time@Location
+#  - Title
+#  - "url"
+#  - >
+#    Abstract
+-
+  - Thomas J. Porter
+  - January 17th, 4-5pm in 2901 BBB
+  - Incremental Bidirectional Typing via Order Maintenance
+  - "https://popl25.sigplan.org/details/wits-2025-papers/2/Incremental-Bidirectional-Typing-via-Order-Maintenance"
+  - "https://dl.acm.org/doi/10.1145/2535838.2535852"
+  - >
+    In live programming systems, editor services such as type checking and
+    evaluation are continually provided while the user is editing the program.
+    The live paradigm offers benefits to developer experience and productivity.
+    Generally editor services are stateless transformations that take only the
+    current the program text as input, and compute the result from scratch. This
+    presents a challenge to implementing live editors at scale, since the
+    execution time will grow with the size of the program, and at some point
+    will take too long to be recomputed between each edit.
+
+    This work presents a solution in the form of an incremental algorithm for
+    maintaining a total static analysis of a program in a simple gradually typed
+    language. Each edit action triggers an update to an enriched program data
+    structure, yielding updated static information more efficiently than a fresh
+    pass would. The algorithm is presented as a small-step dynamics to propagate
+    updates through the enriched program data structure. Most updates flow
+    according to the base bidirectional type system. Additional pointers are
+    maintained to connect bound variables and their binding locations. Order
+    maintenance data structures are employed to efficiently maintain these
+    pointers and to prioritize the order of update propagation. We prove this
+    algorithm equivalent to naive reanalysis in the Agda theorem prover. We
+    implement the algorithm in the Incremental Hazelnut language workbench. We
+    evaluate its performance on edit traces from real users as well as synthetic
+    examples.
