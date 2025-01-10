@@ -10,7 +10,6 @@
   - January 17th, 4-5pm in 2901 BBB
   - Incremental Bidirectional Typing via Order Maintenance
   - "https://popl25.sigplan.org/details/wits-2025-papers/2/Incremental-Bidirectional-Typing-via-Order-Maintenance"
-  - "https://dl.acm.org/doi/10.1145/2535838.2535852"
   - >
     In live programming systems, editor services such as type checking and
     evaluation are continually provided while the user is editing the program.
