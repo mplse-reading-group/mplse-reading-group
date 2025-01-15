@@ -68,11 +68,13 @@ main =
                                   PCRE.match re (B.pack . show $ x) []
                                 ymatches :: [ByteString] <-
                                   PCRE.match re (B.pack . show $ y) []
-                                -- HACK: fall, spring-summer, winter is lexicographical order, but want winter, spring-summer, fall
+                                -- HACK: We want to order the semesters as [winter, spring-summer, fall],
+                                -- but [fall, spring-summer, winter] is the normal lexicographical order.
+                                -- This hack is to avoid writing an explicit comparator.
                                 let make_into_lexicographic_order semester
-                                      | semester == "fall" = "xaa"
-                                      | semester == "winter" = "xab"
-                                      | semester == "spring-summer" = "xac"
+                                      | semester == "winter" = "xaa"
+                                      | semester == "spring-summer" = "xab"
+                                      | semester == "fall" = "xac"
                                 return
                                   $ case (xmatches !! 1)
                                            `compare` (ymatches !! 1) of
